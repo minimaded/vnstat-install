@@ -53,15 +53,24 @@ install_vnstat() {
     echo "Installing vnstat 2.6..."
     echo
     sudo cp -f "/tmp/vnstat-install/vnstat-2.6-${osversion}/examples/systemd/vnstat.service" "/etc/systemd/system/" || install_notdone
+echo "here 1"
     sudo /usr/bin/install -c -m 644 "/tmp/vnstat-install/vnstat-2.6-${osversion}/man/vnstat.1" "/tmp/vnstat-install/vnstat-2.6-${osversion}/man/vnstati.1" "/usr/share/man/man1" || install_notdone
+echo "here 2"
     sudo /usr/bin/install -c -m 644 "/tmp/vnstat-install/vnstat-2.6-${osversion}/man/vnstat.conf.5" "/usr/share/man/man5" || install_notdone
+echo "here 3"
     sudo /usr/bin/install -c -m 644 "/tmp/vnstat-install/vnstat-2.6-${osversion}/man/vnstatd.8" "/usr/share/man/man8" || install_notdone
+echo "here 4"
     sudo /usr/bin/install -c "/tmp/vnstat-install/vnstat-2.6-${osversion}/vnstat" "/usr/bin" || install_notdone
+echo "here 5"
     sudo /usr/bin/install -c "/tmp/vnstat-install/vnstat-2.6-${osversion}/vnstatd" "/usr/sbin" || install_notdone
 
+echo "here 6"
     if [ -f "/usr/share/man/man1/vnstatd.1" ] ; then sudo rm -f "/usr/share/man/man1/vnstatd.1"  || install_notdone ; fi
+echo "here 7"
     sudo /usr/bin/mkdir -p "/etc"  || install_notdone
+echo "here 8"
     /usr/bin/vnstat --showconfig | sudo -u root -g vnstat tee "/etc/vnstat.conf" || install_notdone
+echo "here 9"
 }
 
 clear_vnstat() {
