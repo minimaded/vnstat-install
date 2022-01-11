@@ -42,10 +42,10 @@ get_vnstat() {
         fi
     done
 
-    echo "Installing vnstat..."
+    echo "Getting vnstat 2.6..."
     echo
     sudo mkdir -p "/tmp/vnstat-install" || install_notdone
-    sudo wget -q -O "/tmp/vnstat-install/vnstat-2.6-${osversion}.tar.gz" "https://github.com/minimaded/vnstat-2.6-install/raw/main/vnstat-2.6-${osversion}.tar.gz" || install_notdone
+    sudo wget -q -O "/tmp/vnstat-install/vnstat-2.6-${osversion}.tar.gz" "https://github.com/minimaded/vnstat-install/raw/main/vnstat-2.6-${osversion}.tar.gz" || install_notdone
     sudo tar zxvf "/tmp/vnstat-install/vnstat-2.6-${osversion}.tar.gz" || install_notdone
 }
 
