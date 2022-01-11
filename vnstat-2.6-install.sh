@@ -69,7 +69,8 @@ echo "here 6"
 echo "here 7"
     sudo /usr/bin/mkdir -p "/etc"  || install_notdone
 echo "here 9"
-    sudo /usr/bin/vnstat --showconfig | sudo -u root -g vnstat tee "/etc/vnstat.conf" || install_notdone
+    sudo /usr/bin/vnstat --showconfig | sudo tee "/etc/vnstat.conf" || install_notdone
+    sudo chown root:vnstat "/etc/vnstat.conf"
 echo "here 10"
 echo
 }
