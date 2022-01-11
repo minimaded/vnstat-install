@@ -46,7 +46,7 @@ get_vnstat() {
     echo
     sudo mkdir -p "/tmp/vnstat-install" || install_notdone
     sudo wget -q -O "/tmp/vnstat-install/vnstat-2.6-${osversion}.tar.gz" "https://github.com/minimaded/vnstat-install/raw/main/vnstat-2.6-${osversion}.tar.gz" || install_notdone
-    sudo tar zxvf "/tmp/vnstat-install/vnstat-2.6-${osversion}.tar.gz" -C "/tmp/vnstat-install" || install_notdone
+    sudo tar zxf "/tmp/vnstat-install/vnstat-2.6-${osversion}.tar.gz" -C "/tmp/vnstat-install" || install_notdone
 }
 
 install_vnstat() {
@@ -78,7 +78,7 @@ echo
 clear_vnstat() {
     echo "Cleaning vnstat..."
     echo
-    sudo rm "/var/lib/vnstat/*" || install_notdone
+    sudo rm /var/lib/vnstat/* || install_notdone
     sudo rm -r "/tmp/vnstat-install" || install_notdone
 }
 
