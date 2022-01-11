@@ -76,10 +76,6 @@ enable_vnstat() {
     echo
     sudo /bin/systemctl enable vnstat.service || install_notdone
     sudo /bin/systemctl start vnstat.service || install_notdone
-echo "test"
-    sudo -u vnstat /usr/bin/vnstat -i eth0 -u || install_notdone
-    sudo -u vnstat /usr/bin/vnstat -i wlan0 -u || install_notdone
-    sudo -u vnstat /usr/bin/vnstat -i wlan1 -u || install_notdone
 }
 
 install_done() {
