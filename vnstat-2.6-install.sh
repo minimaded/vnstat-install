@@ -79,11 +79,13 @@ enable_vnstat() {
 }
 
 install_done() {
+    echo
     read -r -p < /dev/tty "Install completed, reboot? [y/N] " response
     case "$response" in
         [yY][eE][sS]|[yY]) 
             sudo reboot
     esac
+    echo
     exit 0
 }
 
