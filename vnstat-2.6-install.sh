@@ -68,9 +68,10 @@ echo "here 6"
     if [ -f "/usr/share/man/man1/vnstatd.1" ] ; then sudo rm -f "/usr/share/man/man1/vnstatd.1"  || install_notdone ; fi
 echo "here 7"
     sudo /usr/bin/mkdir -p "/etc"  || install_notdone
-echo "here 8"
-    /usr/bin/vnstat --showconfig | sudo -u root -g vnstat tee "/etc/vnstat.conf" || install_notdone
 echo "here 9"
+    sudo /usr/bin/vnstat --showconfig | sudo -u root -g vnstat tee "/etc/vnstat.conf" || install_notdone
+echo "here 10"
+echo
 }
 
 clear_vnstat() {
