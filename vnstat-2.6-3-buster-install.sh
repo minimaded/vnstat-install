@@ -4,9 +4,9 @@ set -eo pipefail
 
 do_all() {
     internet_check
-    vnstat_current
+    #vnstat_current
     vnstat_install
-    vnstat_current
+    #vnstat_current
     _done
 }
 
