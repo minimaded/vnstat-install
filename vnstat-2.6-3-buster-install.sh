@@ -4,9 +4,9 @@ set -eo pipefail
 
 do_all() {
     internet_check
-    #vnstat_current
+    vnstat_current
     vnstat_install
-    #vnstat_current
+    vnstat_current
     _done
 }
 
@@ -81,7 +81,7 @@ vnstat_current() {
 }
 
 vnstat_install() {
-    sudo wget -q -O "/tmp/vnstat_2.6-3_armhf_buster.deb" "https://raw.githubusercontent.com/minimaded/vnstat-install/main//vnstat_2.6-3_armhf_buster.deb" || _status 1 "Unable to download vnStat"
+    sudo wget -q -O "/tmp/vnstat_2.6-3_armhf_buster.deb" "https://raw.githubusercontent.com/minimaded/vnstat-install/main/vnstat_2.6-3_armhf_buster.deb" || _status 1 "Unable to download vnStat"
     sudo dpkg -i "/tmp/vnstat_2.6-3_armhf_buster.deb" || _status 1 "Failed to install vnStat"
     sudo apt-get -f install || _status 1 "Failed to install dependencies"
     sudo rm "/tmp/vnstat_2.6-3_armhf_buster.deb" || _status 1 "Failed to remove deb pakage"
