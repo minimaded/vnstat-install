@@ -69,7 +69,7 @@ internet_check() {
 }
 
 vnstat_current() {
-    vnstat_version="$(dpkg -s anydesk | grep "Version: ")"
+    vnstat_version="$(dpkg-query -s vnstat | grep "Version: " | cut -d " " -f2)"
     case "${vnstat_version}" in
         "" )
             echo "${vnstat_version} installed..."
