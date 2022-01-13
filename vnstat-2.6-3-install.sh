@@ -69,10 +69,10 @@ internet_check() {
 }
 
 vnstat_current() {
-    vnstat_version="$(dpkg-query -s vnstat | grep "Version: " | cut -d " " -f2)"
+    vnstat_version="$(dpkg-query -l | grep "vnstat" | tr -s " " | cut -d " " -f 3)"
     case "${vnstat_version}" in
         "" )
-            echo "${vnstat_version} installed..."
+            echo "vnStat ${vnstat_version} installed..."
         ;;
         * )
             echo "vnStat not installed..."
