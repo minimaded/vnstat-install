@@ -80,16 +80,6 @@ vnstat_current() {
     esac
 }
 
-
-
-
-
-
-
-
-
-
-
 vnstat_install() {
     sudo wget -q -O "/tmp/vnstat_2.6-3_armhf_buster.deb" "https://raw.githubusercontent.com/minimaded/vnstat-install/main/vnstat_2.6-3_armhf_buster.deb" || _status 1 "Unable to download vnStat"
     sudo dpkg -i "/tmp/vnstat_2.6-3_armhf_buster.deb" || _status 1 "Failed to install vnStat"
