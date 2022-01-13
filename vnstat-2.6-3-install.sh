@@ -3,11 +3,7 @@
 set -eo pipefail
 
 do_all() {
-    internet_check
-    vnstat_current
-    vnstat_install
-    vnstat_current
-    _done
+
 }
 
 _colors() {
@@ -87,3 +83,8 @@ vnstat_install() {
 }
 
 do_all
+    internet_check
+    vnstat_current
+    vnstat_install
+    vnstat_current
+    _done
