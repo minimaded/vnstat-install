@@ -2,9 +2,7 @@
 
 set -eo pipefail
 
-do_all() {
 
-}
 
 _colors() {
     ansi_red="\033[0;31m"
