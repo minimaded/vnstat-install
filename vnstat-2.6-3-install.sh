@@ -80,7 +80,7 @@ vnstat_install() {
     sudo rm "/tmp/vnstat_2.6-3_armhf.deb" || _status 1 "Failed to remove deb pakage"
 }
 
-do_all
+
     internet_check
     vnstat_current
     vnstat_install
